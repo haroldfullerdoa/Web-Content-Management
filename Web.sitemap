@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0">
+  <siteMapNode url=""   title="Content Management"   description="">
+
+    <siteMapNode url="CMS/Admin/Admin.aspx" title="Admin">
+      <siteMapNode url="CMS/Admin/AddUser.aspx" title="Add User"/>
+      <siteMapNode url="CMS/Admin/EditUser.aspx" title="Edit/Delete User"/>
+    </siteMapNode>
+
+    <siteMapNode url="CMS/Airport_Alerts/Alert_login.aspx" title="Airport Alerts">
+      <siteMapNode url="CMS/Airport_Alerts/AddAlert.aspx" title="Add Alert"/>
+      <siteMapNode url="CMS/Airport_Alerts/EditAlert.aspx" title="Edit/Delete Alert"/>
+    </siteMapNode>
+
+    <siteMapNode url="CMS/HR/HR.aspx" title="Human Resources">
+      <siteMapNode url="CMS/HR/AddJob.aspx" title="Add Job"/>
+      <siteMapNode url="CMS/HR/EditJob.aspx" title="Edit/Delete Job"/>
+    </siteMapNode>
+
+    <siteMapNode url="CMS/Parking/Parking.aspx" title="Parking">
+      <siteMapNode url="CMS/Parking/EditStatus.aspx" title="Edit Parking status"/>
+    </siteMapNode>
+
+    <siteMapNode url="CMS/Public_Affairs/Public_Affairs.aspx" title="Public Affairs">
+      <siteMapNode url="CMS/Public_Affairs/AddPressRelease.aspx" title="Add Press Release"/>
+      <siteMapNode url="CMS/Public_Affairs/EditPress_Release.aspx" title="Edit/Delete Press Release"/>
+      <siteMapNode url="CMS/Public_Affairs/AddNews.aspx" title="Add Airport News Story"/>
+      <siteMapNode url="CMS/Public_Affairs/EditNews.aspx" title="Edit/Delete Airport News Story"/>
+    </siteMapNode>
+
+    <siteMapNode url="CMS/Concessions/default.aspx" title="Concessions">
+      <siteMapNode url="CMS/Concessions/AddStore.aspx" title="Add Company"/>
+      <siteMapNode url="CMS/Concessions/GetBusinessList.aspx" title="Concessions Database"/>
+    </siteMapNode>
+      
+    <siteMapNode url="CMS/Airside_Engine_Runs/default.aspx" title="Airside Engine Run-Up">
+      <siteMapNode url="CMS/Airside_Engine_Runs/Attachments.aspx" title="Manage Attachments"/>
+    </siteMapNode>
+
+    <siteMapNode url="SMS/Default.aspx" title="Safety Management System"/>
+
+  </siteMapNode>
+</siteMap>

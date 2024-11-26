@@ -1,0 +1,41 @@
+<!-- COPY AND PASTE THIS ENTIRE TEXT INTO YOUR FAVORATE TEXT EDITOR, THEN JUST FOLLOW THE INSTRUCTIONS -->
+	<!-- DON'T WORRY ABOUT DELETING THE INSTRUCTIONS, THEY WILL NOT SHOW UP IN THE DOCUMENT ONLINE -->
+
+
+<div class="row"><div class="twelve columns"><p><span class="left"><strong>For Immediate Release</strong><br />
+<!-- ENTER THE DATE TO BE SHOWN UNDER "For Immediate Release" IN THE BLANK LINE DIRECTLY UNDER THIS ONE -->
+
+
+</span><span class="right"><strong>Contact:
+<!-- ENTER THE CONTACT'S NAME IN THE BLANK LINE DIRECTLY UNDER THIS ONE -->
+
+
+</strong><br />
+<!-- ENTER THE CONTACT'S PHONE NUMBER IN THE BLANK LINE DIRECTLY UNDER THIS ONE -->
+
+
+</span></p></div></div><div class="row clearfix" style="margin-top:30px"><div class="twelve columns"><p class="text-center"><strong>
+<!-- ENTER THE TITLE IN THE BLANK LINE DIRECTLY UNDER THIS ONE -->
+
+
+</strong></p></div></div>
+<!-- 
+TYPE EACH NEW PARAGRAPH IN THE BLANK LINE DIRECTLY UNDER **CONTENT**.  
+TO TYPE MORE THAN ONE PARAGRAPH, COPY AND PASTE FROM **START** TO **FINISH** 
+-->
+
+<!-- **START** -->
+<div class="row"><div class="twelve columns text-left"><p>
+<!-- **CONTENT** -->
+
+
+</p></div></div>
+<!-- **FINISH** -->
+
+
+
+
+<div class="row"><div class="twelve columns text-left"><br /><hr /><p><strong>Hartsfield-Jackson International Airport</strong><br />
+Hartsfield-Jackson is the world’s busiest airport, serving more than 92 million passengers annually with nonstop service to more than 150 U.S. destinations and nearly 80 international destinations in more than 50 countries. The Airport is a frequent recipient of awards of excellence for concessions, operations, architectural engineering and construction - including the 2011 Global and North American Airport Efficiency Excellence Award from the Air Transport Research Society (for more information, go to <a href="http://www.atrsworld.org">www.atrsworld.org</a>). It is undergoing $6 billion-plus in capital improvements, which include a new, energy-efficient rental car center; a new, 12-gate international terminal (for more information, go to <a href="http://www.atlanta-airport.com/internationalterminal/">www.atlanta-airport.com/internationalterminal</a>;and aesthetic and functional upgrades to its concourses, people movers and parking services. For more information, go to <a href="http://www.atlanta-airport.com">www.atlanta-airport.com</a>. Check out the Airport’s YouTube channel by visiting <a href="http://www.youtube.com/AtlantaHartsfield">www.youtube.com/AtlantaHeartsfield</a>, and become a fan on Facebook.</p></div></div>
+
+<!-- WHEN YOU ARE FINISHED, JUST COPY AND PASTE THE COMPLETED FORM INTO THE "DETAILED ARTICLE" FIELD -->

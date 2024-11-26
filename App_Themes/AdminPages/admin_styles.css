@@ -1,0 +1,365 @@
+﻿
+
+/*	--------------------------------------------------
+	:: Global Reset & Standards
+	-------------------------------------------------- */
+	
+	/* 
+		Eric Meyer's CSS Reset
+		http://meyerweb.com/eric/tools/css/reset/ 
+		v2.0 | 20110126
+   		License: none (public domain)
+	*/
+	
+	html, body, div, span, applet, object, iframe,
+	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+	a, abbr, acronym, address, big, cite, code,
+	del, dfn, em, img, ins, kbd, q, s, samp,
+	small, strike, strong, sub, sup, tt, var,
+	b, u, i, center,
+	dl, dt, dd, ol, ul, li,
+	fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td,
+	article, aside, canvas, details, embed, 
+	figure, figcaption, footer, header, hgroup, 
+	menu, nav, output, ruby, section, summary,
+	time, mark, audio, video {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font: inherit;
+		vertical-align: baseline;
+	}
+	html {
+		font-size: 62.5%; 
+	}
+	/* HTML5 display-role reset for older browsers */
+	article, aside, details, figcaption, figure, 
+	footer, header, hgroup, menu, nav, section {
+		display: block;
+	}
+	body {
+		line-height: 1;
+	}
+	ol, ul {
+		list-style: none;
+	}
+	blockquote, q {
+		quotes: none;
+	}
+	blockquote:before, blockquote:after,
+	q:before, q:after {
+		content: '';
+		content: none;
+	}
+	table {
+		border-collapse: collapse;
+		border-spacing: 0;
+	}
+	
+	sub {vertical-align: sub;}
+	sup {vertical-align: super;}
+	
+	body { background: #fff; font-family: "Helvetica Neue", "HelveticaNeue", Helvetica, Arial, "Lucida Grande", sans-serif; font-size: 13px; font-size: 1.3rem; line-height: 18px; color: #555; position: relative; -webkit-font-smoothing: antialiased; }
+	
+/*	--------------------------------------------------
+	:: Calender Controls
+	-------------------------------------------------- */
+
+#CalendarControlIFrame {
+  display: none;
+  left: 0px;
+  position: absolute;
+  top: 0px;
+  height: 250px;
+  width: 250px;
+  z-index: 99;
+}
+
+#CalendarControl {
+  position:absolute;
+  background-color:#FFF;
+  margin:0;
+  padding:0;
+  display:none;
+  z-index: 100;
+}
+
+#CalendarControl table {
+  font-family: arial, verdana, helvetica, sans-serif;
+  font-size: 8pt;
+  border-left: 1px solid #336;
+  border-right: 1px solid #336;
+}
+
+#CalendarControl th {
+  font-weight: normal;
+}
+
+#CalendarControl th a {
+  font-weight: normal;
+  text-decoration: none;
+  color: #FFF;
+  padding: 1px;
+}
+
+#CalendarControl td {
+  text-align: center;
+}
+
+#CalendarControl .calendarHeader {
+  background-color: #336;
+}
+
+#CalendarControl .weekday {
+  background-color: #DDD;
+  color: #000;
+}
+
+#CalendarControl .weekend {
+  background-color: #FFC;
+  color: #000;
+}
+
+#CalendarControl .current {
+  border: 1px solid #339;
+  background-color: #336;
+  color: #FFF;
+}
+
+#CalendarControl .weekday,
+#CalendarControl .weekend,
+#CalendarControl .current {
+  display: block;
+  text-decoration: none;
+  border: 1px solid #FFF;
+  width: 2em;
+}
+
+#CalendarControl .weekday:hover,
+#CalendarControl .weekend:hover,
+#CalendarControl .current:hover {
+  color: #FFF;
+  background-color: #336;
+  border: 1px solid #999;
+}
+
+#CalendarControl .previous {
+  text-align: left;
+}
+
+#CalendarControl .next {
+  text-align: right;
+}
+
+#CalendarControl .previous,
+#CalendarControl .next {
+  padding: 1px 3px 1px 3px;
+  font-size: 1.4em;
+}
+
+#CalendarControl .previous a,
+#CalendarControl .next a {
+  color: #FFF;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#CalendarControl .title {
+  text-align: center;
+  font-weight: bold;
+  color: #FFF;
+}
+
+#CalendarControl .empty {
+  background-color: #CCC;
+  border: 1px solid #FFF;
+}
+
+
+/*	--------------------------------------------------
+	:: Links
+	-------------------------------------------------- */
+	a { color: #2a85e8; text-decoration: none; line-height: inherit; }
+	a:hover { color: #ff8000; }
+	a:focus { color: #cc4714; outline: none; }
+	p a, p a:visited { line-height: inherit; }
+	
+
+/*	--------------------------------------------------
+	:: Lists
+	-------------------------------------------------- */
+	ul, ol { margin-bottom: 18px; }
+	ul { list-style: none outside; }
+	ol { list-style: decimal; }
+	ol, ul.square, ul.circle, ul.disc { margin-left: 30px; }
+	ul.square { list-style: square outside; }
+	ul.circle { list-style: circle outside; }
+	ul.disc { list-style: disc outside; }
+	li { margin-bottom: 12px; }
+	ul.large li { line-height: 21px; }
+
+
+/*	--------------------------------------------------
+	:: Forms
+	-------------------------------------------------- */
+    .label { display: block; font-size: 13px; font-weight:bold; line-height: 18px; cursor: pointer; margin-bottom: 0px; }
+    .space-after {margin-bottom: 10px;}
+    .cal-image {display: inline; margin-right:30px; }
+    .date-button {margin-top: 15px;}
+    .btnBack { margin-bottom: 16px; }
+    
+    /* Fix Issue with AJax CalanderExtender */
+    .ajax__calendar_container { clear:both; z-index: 99999 ; zoom: 1;}
+
+	
+/*	--------------------------------------------------
+	:: GridView
+	-------------------------------------------------- */	
+	.gvMain { background: #fff; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; margin: 0 auto; border: 1px solid #333; }
+	.gvHeader, .gvHeader>th, .gvFooter, .gvFooter>th { background: #ddd; color: #222; padding: 5px; font-weight: bold; text-align: left; font-size: 16px; border: 1px solid #333; }	
+	.gvHeader>th>a, .gvFooter>th>a { text-decoration: underlint; }	
+	.gvPager { background: #284775; }	
+	.gvRow, .gvRow>td, .gvAlternatingRow, .gvAlternatingRow>td { color: #333; padding: 5px; vertical-align: top; border: none; font-size: 13px; border: 1px solid #999; }	
+	.gvAlternatingRow, .gvAlternatingRow>td { background: #f9f9f9; }	
+	.gvSelectedRow, .gvSelectedRow>td { background: #e2ded6; font-weight: bold; color: #333; }	
+	.gvEmptyRow, .gvEmptyRow>td { background: #ffff66; }	
+	.gvEditRow, .gvEditRow>td { background: #999999; }
+	
+
+/*	--------------------------------------------------
+	:: GridView
+	-------------------------------------------------- */
+	#adminDetails>tbody>tr {  }
+	#adminDetails>tbody>tr>td { padding: 5px 5px 5px 5px; }
+
+/* -------------------------------------------------- 
+	:: Misc
+   -------------------------------------------------- */
+	.left        { float: left; }
+	.right       { float: right; }
+	.text-left   { text-align: left; }
+	.text-right  { text-align: right; }
+	.text-center { text-align: center; }
+	.hide        { display: none; }
+	.highlight   { background: #ff0; }
+	
+	
+/*	--------------------------------------------------
+    :: Typography
+	-------------------------------------------------- */
+	h1, h2, h3, h4, h5, h6 { color: #181818; font-weight: bold; line-height: 1.25 }
+	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { font-weight: inherit; }
+	h1 { font-size: 46px; font-size: 4.6rem; margin-bottom: 12px;}
+	h2 { font-size: 35px; font-size: 3.5rem; margin-bottom: 9px; }
+	h3 { font-size: 28px; font-size: 2.8rem; margin-bottom: 9px; }
+	h4 { font-size: 21px; font-size: 2.1rem; margin-bottom: 3px; }
+	h5 { font-size: 18px; font-size: 1.8rem; font-weight: normal; margin-bottom: 3px;  }
+	h6 { font-size: 15px; font-size: 1.5rem; font-weight: normal; }
+
+	p { font-size: 13px; font-size: 1.3rem; line-height: 1.25; margin: 0 0 18px; }
+	p img { margin: 0; }
+	p.lead { font-size: 18px; font-size: 1.8rem; line-height: 1.5;  }
+	
+	em, i { font-style: italic; line-height: inherit; }
+	strong, b { font-weight: bold; line-height: inherit; }
+	small { font-size: 60%; line-height: inherit; }
+		
+	hr { border: solid #ddd; border-width: 1px 0 0; clear: both; margin: 12px 0 18px; height: 0; }
+	
+	
+	/**
+ 	 * Print styles.
+	 *
+	 * Inlined to avoid required HTTP connection: www.phpied.com/delay-loading-your-print-css/
+	 * Credit to Paul Irish and HTML5 Boilerplate (html5boilerplate.com)
+	 */
+	.print-only { display: none !important; }
+	@media print {
+		* { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important;
+		-ms-filter: none !important; } /* Black prints faster: sanbeiji.com/archives/953 */
+		p a, p a:visited { color: #444 !important; text-decoration: underline; }
+		p a[href]:after { content: " (" attr(href) ")"; }
+		abbr[title]:after { content: " (" attr(title) ")"; }
+		.ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
+		pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+		thead { display: table-header-group; } /* css-discuss.incutio.com/wiki/Printing_Tables */
+		tr, img { page-break-inside: avoid; }
+		@page { margin: 0.5cm; }
+		p, h2, h3 { orphans: 3; widows: 3; }
+		h2, h3{ page-break-after: avoid; }
+		.hide-on-print { display: none !important; }
+		.print-only { display: block !important; }
+	}
+
+/* --------------------------------------------------
+	:: Grid
+	
+	This is the mobile-friendly, responsive grid that
+	lets Foundation work much of its magic.
+	
+	-------------------------------------------------- */
+
+	.adminContainer { padding: 0 20px; }
+	
+	.row { width: 100%; min-width: 727px; margin: 0 auto; }
+	/* To fix the grid into a certain size, set max-width to width */
+	.row .row { min-width: 0; }
+	
+	.column, .columns { margin-left: 4.4%; float: left; min-height: 1px; position: relative; }
+	.column:first-child, .columns:first-child { margin-left: 0; }
+	[class*="column"] + [class*="column"]:last-child { float: right; }
+	[class*="column"] + [class*="column"].end { float: left; }
+	
+	.row .one 		{ width: 4.3%; }
+	.row .two 		{ width: 13%; }
+	.row .three 	{ width: 21.679%; }
+	.row .four 		{ width: 30.37%; }
+	.row .five 		{ width: 39.1%; }
+	.row .six 		{ width: 47.8%; }
+	.row .seven 	{ width: 56.5%; }
+	.row .eight 	{ width: 65.2%; }
+	.row .nine 		{ width: 73.9%; }
+	.row .ten 		{ width: 82.6%; }
+	.row .eleven 	{ width: 91.3%; }
+	.row .twelve 	{ width: 100%; }
+	
+	.row .offset-by-one 	{ margin-left: 13.1%;  }
+	.row .offset-by-two 	{ margin-left: 21.8%;  }
+	.row .offset-by-three 	{ margin-left: 30.5%;  }
+	.row .offset-by-four 	{ margin-left: 39.2%;  }
+	.row .offset-by-five 	{ margin-left: 47.9%;  }
+	.row .offset-by-six 	{ margin-left: 56.6%;  }
+	.row .offset-by-seven 	{ margin-left: 65.3%;  }
+	.row .offset-by-eight 	{ margin-left: 74.0%;  }
+	.row .offset-by-nine 	{ margin-left: 82.7%;  }
+	.row .offset-by-ten 	{ margin-left: 91.4%;  }
+	
+	.row .centered { float: none; margin: 0 auto; }
+
+	.row .offset-by-one:first-child 	{ margin-left: 8.7%;  }
+	.row .offset-by-two:first-child 	{ margin-left: 17.4%;  }
+	.row .offset-by-three:first-child 	{ margin-left: 26.1%;  }
+	.row .offset-by-four:first-child 	{ margin-left: 34.8%;  }
+	.row .offset-by-five:first-child 	{ margin-left: 43.5%;  }
+	.row .offset-by-six:first-child 	{ margin-left: 52.2%;  }
+	.row .offset-by-seven:first-child 	{ margin-left: 60.9%;  }
+	.row .offset-by-eight:first-child 	{ margin-left: 69.6%;  }
+	.row .offset-by-nine:first-child 	{ margin-left: 78.3%;  }
+	.row .offset-by-ten:first-child 	{ margin-left: 87%;  }
+	.row .offset-by-eleven:first-child 	{ margin-left: 95.7%;  }
+
+	 /* Nicolas Gallagher's micro clearfix */
+	 .row:before, .row:after, .clearfix:before, .clearfix:after { content:""; display:table; }
+	 .row:after, .clearfix:after { clear: both; }
+	 .row, .clearfix { zoom: 1; }
+
+    .ajax__calendar_container { clear:both; z-index: 99999 ; zoom: 1;}
+
+
+
+
+
+
+
+

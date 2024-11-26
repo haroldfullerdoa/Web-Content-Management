@@ -1,0 +1,18 @@
+﻿body 
+{
+	
+}
+
+
+a:link{color:Black; text-decoration:none;}
+a:hover{color:Black; font-weight:bold; }
+a:visited{color:Black; text-decoration:none;}
+.todays
+{
+	font-family:Arial;
+	font-size:12px;
+	font-weight:bold  ;
+	 color:White;
+	
+	   
+}

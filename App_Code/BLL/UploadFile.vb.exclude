@@ -1,0 +1,153 @@
+Imports Microsoft.VisualBasic
+Imports System.IO
+''' <summary>
+''' Summary description for OpLoadFile
+''' </summary>
+Public Class UpLoadFile
+    Private _InpFILE As HtmlInputFile
+    Public flExtens As FileExtensions
+    Dim strAttachmentPath As String = Globals.FolderPath.ToString()
+    'Dim strAttachmentPath As String = System.Web.HttpContext.Current.Server.MapPath(Globals.FolderPath.ToString())
+    Public Enum FileExtensions As Long
+        GIF
+        JPEG
+        BMP
+        XLS
+        DOC
+        DOCX
+        TXT
+        PDF
+        ACCESSERROR
+        OTHER
+        NULL
+    End Enum
+
+    Public Sub New(ByVal InpFILE As HtmlInputFile)
+        '
+        ' TODO: Add constructor logic here
+        '
+
+        _InpFILE = InpFILE
+    End Sub
+
+    Public WriteOnly Property InpFILE() As HtmlInputFile
+        Set(ByVal value As HtmlInputFile)
+            _InpFILE = value
+        End Set
+    End Property
+
+    Public Function GetFileName() As String
+        If _InpFILE IsNot Nothing Then
+            If Not _InpFILE.Value.Equals("") Then
+                Return Path.GetFileName(_InpFILE.PostedFile.FileName).ToUpper()
+            Else
+                Return Nothing
+
+            End If
+        Else
+            Return Nothing
+        End If
+
+    End Function
+
+    Public Function GetFileExtension() As String
+        If _InpFILE IsNot Nothing Then
+            If Not _InpFILE.Value.Equals("") Then
+                Return Path.GetExtension(_InpFILE.PostedFile.FileName).Substring(1).ToUpper()
+            Else
+                Return Nothing
+            End If
+        Else
+            Return Nothing
+        End If
+    End Function
+
+    Public Function ExtensionType() As FileExtensions
+        If _InpFILE IsNot Nothing Then
+            Select Case GetFileExtension()
+                Case "GIF"
+                    flExtens = FileExtensions.GIF
+                    Exit Select
+                Case "JPG"
+                    flExtens = FileExtensions.JPEG
+                    Exit Select
+                Case "BMP"
+                    flExtens = FileExtensions.BMP
+                    Exit Select
+                Case "XLS"
+                    flExtens = FileExtensions.XLS
+                    Exit Select
+                Case "DOC"
+                    flExtens = FileExtensions.DOC
+                    Exit Select
+                Case "DOCX"
+                    flExtens = FileExtensions.DOCX
+                    Exit Select
+                Case "TXT"
+                    flExtens = FileExtensions.TXT
+                    Exit Select
+                Case "PDF"
+                    flExtens = FileExtensions.PDF
+                    Exit Select
+                Case "File does not Exists"
+                    flExtens = FileExtensions.ACCESSERROR
+                    Exit Select
+                Case Else
+                    flExtens = FileExtensions.OTHER
+                    Exit Select
+            End Select
+        Else
+            flExtens = FileExtensions.NULL
+        End If
+        Return flExtens
+    End Function
+
+    Public Function SaveFileAs(ByVal FilePath As String) As String
+
+        If _InpFILE IsNot Nothing Then
+            'If (File.Exists(_InpFILE.PostedFile.FileName)) Then
+            If ExtensionType() <> FileExtensions.GIF Or ExtensionType() <> FileExtensions.JPEG Or ExtensionType() <> FileExtensions.BMP Or ExtensionType() <> FileExtensions.XLS Then
+                If File.Exists(strAttachmentPath & "\" & FilePath) Then
+                    File.Delete(strAttachmentPath & "\" & FilePath)
+                End If
+                _InpFILE.PostedFile.SaveAs(strAttachmentPath & "\" & FilePath)
+                Return ""
+            Else
+                Return "The file you have uploaded is not supported"
+            End If
+            'Else
+            '    Return "Not able to upload"
+            'End If
+        Else
+        Return "Upload Error"
+        End If
+    End Function
+
+    Public Function SaveMultipleFilesAs(ByVal FilePath As String, ByVal Request As HttpRequest) As Boolean
+        Dim uploadFilCol As HttpFileCollection = Request.Files
+        For i As Integer = 0 To uploadFilCol.Count - 1
+            Dim file As HttpPostedFile = uploadFilCol(i)
+            Dim fileExt As String = Path.GetExtension(file.FileName).ToLower()
+            Dim fileName As String = Path.GetFileName(file.FileName)
+            If fileName <> String.Empty Then
+                Try
+                    If fileExt = ".jpg" OrElse fileExt = ".gif" Then
+                        file.SaveAs(FilePath)
+                        Return True
+                    Else
+                        Return False
+                    End If
+                Catch ex As System.Data.OracleClient.OracleException
+                    Dim strex As String = "System.Data.OracleClient.OracleException"
+                    System.Web.HttpContext.Current.Response.Redirect("~/CMS/ErrorPage.aspx?error=" + strex)
+                Catch ex As Exception
+                    System.Web.HttpContext.Current.Response.Redirect("~/CMS/Errors.aspx?error=" + ex.Message.Replace("\n", ""), False)
+                End Try
+            Else
+                Return False
+            End If
+        Next
+        Return False
+    End Function
+
+End Class
